@@ -9,10 +9,12 @@ public class TV {
 
     public void setON() {
         this.isON = true;
+        System.out.println("TV is ON");
     }
 
     public void setOFF() {
         this.isON = false;
+        System.out.println("TV is OFF");
     }
 
     public void setChannel(int channelNumber) {

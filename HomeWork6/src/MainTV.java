@@ -62,11 +62,13 @@ public class MainTV {
 
         TV tv = new TV(channels);
         RemoteConroller remoteConroller = new RemoteConroller(tv);
+        tv.setON();
         remoteConroller.setChannel(0);
         remoteConroller.setChannel(1);
         remoteConroller.setChannel(2);
         remoteConroller.setChannel(3);
         remoteConroller.setChannel(4);
         remoteConroller.setChannel(5);
+        tv.setOFF();
     }
 }

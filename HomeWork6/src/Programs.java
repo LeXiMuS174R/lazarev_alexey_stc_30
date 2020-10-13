@@ -7,7 +7,7 @@ public class Programs {
 
     public Programs(String nameProgram) {
         this.nameProgram = nameProgram;
-//        System.out.println("Created " + this.toString());
+        System.out.println("Created " + this.toString());
     }
 
     @Override

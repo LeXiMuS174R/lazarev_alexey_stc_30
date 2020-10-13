@@ -7,7 +7,7 @@ public class Channel {
     public Channel(int number, Programs[] programs) {
         this.number = number;
         this.programs = programs;
-//        System.out.println("Created " + this.toString());
+        System.out.println("Created " + this.toString());
     }
 
     public Programs[] getPrograms() {
