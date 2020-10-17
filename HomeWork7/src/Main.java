@@ -8,7 +8,7 @@ public class Main {
                 .build();
 
         User user2 = new User.Builder()
-                .age(24)
+                .age(25)
                 .firstName("Alexey")
                 .lastName("Lazarev")
                 .build();
