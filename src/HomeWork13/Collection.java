@@ -1,7 +1,7 @@
 package HomeWork13;
 
 // не гарантирует порядок элементов
-public interface Collection<J> extends java.lang.Iterable<J> {
+public interface Collection<J> extends Iterable<J> {
     void add(J element);
 
     boolean contains(J element);
