@@ -1,21 +1,21 @@
 import java.util.Arrays;
 
-public class ArrayList implements List {
+public class ArrayList<T> implements List<T> {
     private static final int DEFAULT_SIZE = 10;
-    private int data[];
+    private T data[];
     private int count;
 
     public ArrayList() {
-        this.data = new int[DEFAULT_SIZE];
+        this.data = (T[]) new Object[DEFAULT_SIZE];
     }
 
-    private class ArrayListIterator implements Iterator {
+    private class ArrayListIterator<T> implements Iterator<T> {
 
         private int current = 0;
 
         @Override
-        public int next() {
-            int value = data[current];
+        public T next() {
+            T value = (T) data[current];
             current++;
             return value;
         }
@@ -27,16 +27,16 @@ public class ArrayList implements List {
     }
 
     @Override
-    public int get(int index) {
+    public T get(int index) {
         if (index < count) {
             return this.data[index];
         }
         System.err.println("Вышли за пределы массива");
-        return -1;
+        return null;
     }
 
     @Override
-    public int indexOf(int element) {
+    public int indexOf(T element) {
         for (int i = 0; i < count; i++) {
             if (data[i] == element) {
                 return i;
@@ -49,13 +49,13 @@ public class ArrayList implements List {
     public void removeByIndex(int index) {
         for (int i = index; i < count; i++)
             data[i] = data[i + 1];
-        data[count] = 0;
+        data[count] = null;
         count--;
     }
 
     @Override
-    public void insert(int element, int index) {
-        if (count == data.length) {
+    public void insert(T element, int index) {
+        if (count == data.length - 1) {
             resize();
         }
         for (int i = count - 1; i >= index; i--) {
@@ -67,7 +67,7 @@ public class ArrayList implements List {
 
     @Override
     public void reverse() {
-        int value;
+        T value;
         for (int i = 0; i < count / 2; i++) {
             value = data[i];
             data[i] = data[count - 1 - i];
@@ -81,7 +81,7 @@ public class ArrayList implements List {
     }
 
     @Override
-    public boolean contains(int element) {
+    public boolean contains(T element) {
         return indexOf(element) != -1;
     }
 
@@ -94,7 +94,7 @@ public class ArrayList implements List {
     }
 
     @Override
-    public void add(int element) {
+    public void add(T element) {
         if (count == data.length - 1) {
             resize();
         }
@@ -105,7 +105,7 @@ public class ArrayList implements List {
     private void resize() {
         int oldLength = this.data.length;
         int newLength = oldLength + (oldLength >> 1);
-        int newData[] = new int[newLength];
+        T newData[] = (T[]) new Object[newLength];
 
         System.arraycopy(this.data, 0, newData, 0, oldLength);
 
@@ -119,7 +119,7 @@ public class ArrayList implements List {
     }
 
     @Override
-    public void removeFirst(int element) {
+    public void removeFirst(T element) {
         int indexOfRemovingElement = indexOf(element);
 
         for (int i = indexOfRemovingElement; i < count - 1; i++) {
@@ -130,7 +130,7 @@ public class ArrayList implements List {
     }
 
     @Override
-    public Iterator iterator() {
-        return new ArrayListIterator();
+    public Iterator<T> iterator() {
+        return new ArrayListIterator<>();
     }
 }
