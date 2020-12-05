@@ -7,9 +7,9 @@ public class Main {
 
         map.put("Марсель", 26);
         map.put("Марсель", 27);
-        map.put("Данис", 27);
+        map.put("Данис", 29);
         map.put("Алексей", 24);
-//        map.put("Александр", 35);
+        map.put("Александр", 35);
         map.put("Валерия", 22);
         map.put("Андрей", 47);
         map.put("Виктор", 18);
@@ -18,7 +18,7 @@ public class Main {
         System.out.println(map.get("Марсель"));
         System.out.println(map.get("Данис"));
         System.out.println(map.get("Алексей"));
-//        System.out.println(map.get("Александр"));
+        System.out.println(map.get("Александр"));
         System.out.println(map.get("Валерия"));
         System.out.println(map.get("Андрей"));
         System.out.println(map.get("Виктор Александрович"));
@@ -31,7 +31,7 @@ public class Main {
         set.add("Марсель");
         set.add("Данис");
         set.add("Алексей");
-//        set.add("Александр");
+        set.add("Александр");
         set.add("Валерия");
         set.add("Андрей");
         set.add("Виктор");
@@ -41,7 +41,7 @@ public class Main {
         set.contains("Марсель");
         set.contains("Данис");
         set.contains("Алексей");
-//        set.contains("Александр");
+        set.contains("Александр");
         set.contains("Валерия");
         set.contains("Андрей");
         set.contains("Виктор");
@@ -51,7 +51,7 @@ public class Main {
         System.out.println(set.contains("Марсель"));
         System.out.println(set.contains("Данис"));
         System.out.println(set.contains("Алексей"));
-//        System.out.println(set.contains("Александр"));
+        System.out.println(set.contains("Александр"));
         System.out.println(set.contains("Валерия"));
         System.out.println(set.contains("Андрей"));
         System.out.println(set.contains("Виктор"));

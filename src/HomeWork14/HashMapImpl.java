@@ -20,14 +20,22 @@ public class HashMapImpl<K, V> implements Map<K, V> {
     @Override
     public void put(K key, V value) {
         MapEntry<K, V> newMapEntry = new MapEntry<>(key, value);
+        MapEntry<K, V> prevMapEntry;
         int index = key.hashCode() & (entries.length - 1);
         if (entries[index] == null) {
             entries[index] = newMapEntry;
         } else {
-            MapEntry<K, V> current = entries[index]; //# 1
-            if (current.key == newMapEntry.key) {
-                entries[index].value = newMapEntry.value;
+            MapEntry<K, V> current = entries[index];
+            do {
+                if (current.key == newMapEntry.key) {
+                    entries[index].value = newMapEntry.value;
+                    return;
+                }
+                prevMapEntry = current;
+                current = current.next;
             }
+            while (prevMapEntry.next != null);
+            prevMapEntry.next = newMapEntry;
         }
     }
 
