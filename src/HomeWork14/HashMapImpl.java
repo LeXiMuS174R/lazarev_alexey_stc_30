@@ -14,7 +14,7 @@ public class HashMapImpl<K, V> implements Map<K, V> {
         }
     }
 
-    private MapEntry<K, V> entries[] = new MapEntry[DEFAULT_SIZE];
+    private final MapEntry<K, V>[] entries = new MapEntry[DEFAULT_SIZE];
 
 
     @Override
