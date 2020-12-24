@@ -4,15 +4,15 @@ import java.util.Objects;
 
 public class Car implements Comparable<Car> {
 
-    private String numberCar;
+    private final String numberCar;
 
-    private String model;
+    private final String model;
 
-    private String color;
+    private final String color;
 
-    private Long run;
+    private final Long run;
 
-    private Long price;
+    private final Long price;
 
     public Car(String numberCar, String model, String color, Long run, Long price) {
         this.numberCar = numberCar;
